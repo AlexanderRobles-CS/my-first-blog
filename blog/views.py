@@ -42,5 +42,10 @@ def post_edit(request, pk):
     return render(request, 'blog/post_edit.html', {'form': form})
     
 
-
-
+def post_delete(request, pk):
+    if request.method == "POST":
+        if form.is_valid():
+            post = form.delete(commit=False)
+            post.delete()
+    return redirect('post_delete', pk=post.pk)
+        
